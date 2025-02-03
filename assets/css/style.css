@@ -11,6 +11,7 @@
 
 .logo {
     width: 30%;
+    padding-top: 0.5rem;
 }
 
 .container {
@@ -23,6 +24,7 @@
 .list {
     display: flex;
     width: 45%;
+    padding-top: 0.5rem;
 }
 
 .list-item {
@@ -30,6 +32,13 @@
     padding-right: 15px;
     list-style: none;
 
+}
+.list-item:hover {
+    transform: translateX(10px); 
+}
+
+.list-item:hover a {
+    color: var(--main-color); 
 }
 
 .nav-link {
@@ -40,6 +49,11 @@
 
 .icons {
     width: 10%;
+    padding-top: 0.5rem;
+}
+.icons i{
+    padding-left:15px;
+    color:var(--main-color);
 }
 
 .button {
@@ -50,9 +64,10 @@
     border: 2px solid var(--secondary-color);
     border-radius: 50px;
     font-weight: bold;
-    transition:1s;
+    transition: 1s;
 }
-.button:hover{
+
+.button:hover {
     border: 2px solid var(--main-color);
 }
 
@@ -154,7 +169,8 @@
 
 /*main-products*/
 .container-mpro,
-.container-tpro,.container-bestSeller,
+.container-tpro,
+.container-bestSeller,
 .container-news {
     width: 80%;
     margin: auto;
@@ -167,9 +183,11 @@
     animation: fadeup 1s ease-in-out forwards;
     animation-delay: 2s;
 }
-.container-tpro{
-animation-delay:3s;
+
+.container-tpro {
+    animation-delay: 3s;
 }
+
 @keyframes fadeup {
     0% {
         opacity: 0;
@@ -184,6 +202,7 @@ animation-delay:3s;
         /* موقع النهاية */
     }
 }
+
 .product {
     position: relative;
     text-align: center;
@@ -198,21 +217,43 @@ animation-delay:3s;
     /*(ديف البرودكت)عرض الصورة مساوي لعرض ابوها */
 }
 
-/*
-  .product .overlay{
-   
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); 
-        opacity: 0;
-        transition: opacity 0.3s ease;
-  }
-  .product:hover .overlay{
-    opacity: 1; 
-  }*/
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    opacity: 0;
+    /* مخفي في البداية */
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+/* عند تمرير الماوس، تظهر الطبقة */
+.product:hover .overlay {
+    opacity: 1;
+}
+
+.square {
+    background-color: var(--main-color);
+    width: 200px;
+    height: 90px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 20px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+}
 
 /*trend products*/
 .trend-products {
@@ -226,12 +267,52 @@ animation-delay:3s;
     padding-bottom: 20px;
 }
 
+.product img {
+    position: relative !important;
+}
+
+.trend-products .product .overlay {
+    position: absolute;
+    top: auto;
+    bottom: 62px;
+    height: 20%;
+    left: 0;
+
+}
+
+.trend-products .container-tpro .product:hover .icon {
+    opacity: 1;
+}
+.product:hover h3 {
+  color:var(--main-color)
+}
+.icon {
+    display: flex;
+    gap: 10px;
+}
+
+.icon i {
+    
+    padding: 10px;
+    background-color: rgb(136, 148, 255);
+    transition: background-color 0.5s;
+}
+
+.icon i:hover {
+    background-color: var(--main-color);
+}
+
 /*shop*/
 .shop {
     margin-top: 40px;
     background-image: url(../../assets/images/back-ground-cart.webp);
     height: 70vh;
     background-repeat: no-repeat;
+    background-position: center center; /*X Y*/
+    transition: background-position 0.8s ease-in-out;
+}
+.shop:hover{
+    background-position: 30% center; /*النقطة المرجعية للصورة تبدأ عند 30% من عرض العنصر بدل 50*/
 }
 
 .desc {
@@ -242,9 +323,11 @@ animation-delay:3s;
     gap: 20px;
     padding-top: 150px;
 }
-.desc span{
-    color:var(--secondary-color)
+
+.desc span {
+    color: var(--secondary-color)
 }
+
 .button-shop {
     text-decoration: none;
     padding: 0.5rem 1rem 0.5rem 1rem;
@@ -252,35 +335,118 @@ animation-delay:3s;
     border-radius: 50px;
     width: 150px;
     text-align: center;
-    color:white;
+    color: white;
     background-color: var(--main-color);
     font-weight: bold;
-    transition:1s background-color;
+    transition: 1s background-color;
 }
-.button-shop:hover{
-    color:black;
+
+.button-shop:hover {
+    color: black;
     background-color: transparent;
 }
+
 /*Best Seller*/
-.container-bestSeller{
+.container-bestSeller {
     animation-delay: 4s;
 }
 
 
 /*latest news*/
-.latest-news{
-    padding-bottom:50px;
+.latest-news {
+    padding-bottom: 50px;
+}
+
+.info span {
+    padding-right: 30px;
+    color: rgb(112, 123, 125);
+}
+
+.for-read {
+    text-align: left;
+}
+
+.for-read a {
+    text-decoration: none;
+}
+
+.latest-news i {
+    padding: 5px;
+}
+/*Start footer*/
+.footer{
+    background-color: #002347;
+    padding:50px 0;
+}
+.container-footer{
+    width:80%;
+    margin:auto;
+    display: flex;
+}
+.foot h4{
+    margin-bottom:20px;
+    color:white;
+    font-size: larger;
+    font-weight: bold;
+}
+.foot p{
+    color:gray;
+}
+.foot{
+    width:25%;
+    padding:10px;
+}
+.method{
+    display: flex;
+    padding-bottom: 20px;
+    gap:10px;
+}
+.method .icon{
+    height: auto;
+}
+.method .icon i{
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    color:white;
+    background-color: var(--main-color);
 }
 .info span{
- padding-right: 30px;
-    color:rgb(112, 123, 125);
+    color:white;
+    font-size:16px;
 }
-.for-read{
-    text-align:left;
+.qLinks ul{
+    margin-left:15px;
 }
-.for-read a{
-   text-decoration: none;
+.quickLink li{
+    list-style: none;
+    color:gray;
+    padding-bottom:10px;
 }
-.latest-news i{
-    padding:5px;
+.quickLink{
+    text-decoration: none;
+}
+.container-gallery{
+    width:50%;
+    display:flex;
+    flex-wrap: wrap;
+    
+}
+.photo{
+  width:50%;
+}
+/*Start copy rights*/
+.copyRights{
+    height: 10vh;
+    background-color: var(--secondary-color);
+}
+.copyRights p{
+    color:#002347;
+    text-align: center;
+    padding-top:20px;
+}
+.copyRights i{
+    color:red
 }

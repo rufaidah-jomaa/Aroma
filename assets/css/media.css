@@ -1,0 +1,157 @@
+@media screen and (min-width:864px) and (max-width:992px) {
+
+    .list {
+        width: 60%;
+    }
+
+    .button {
+        width: 25%;
+    }
+
+    .description {
+        width: 50%;
+        margin: 250px;
+    }
+
+    .new {
+        width: 40%;
+    }
+
+    .new img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:720px) and (max-width:863px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .list {
+        flex: 0 0 70%;
+    }
+
+    .icons {
+        flex: 0 0 50%;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .button {
+        margin: 20px;
+
+    }
+
+    .header-image {
+        top: 195px;
+    }
+
+    .header h1 {
+        font-size: large;
+    }
+
+    .description {
+        width: 50%;
+        margin: 250px;
+    }
+
+    .shop {
+        background-size: cover;
+    }
+
+    .new {
+        width: 40%;
+    }
+
+    .new img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:663px) and (max-width:719px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .list {
+        flex: 0 0 70%;
+    }
+
+    .icons {
+        flex: 0 0 50%;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .button {
+        margin: 20px;
+
+    }
+
+    .header-image {
+        top: 195px;
+    }
+
+    .header h1 {
+        font-size: medium;
+    }
+
+    .description {
+        width: 30%;
+        margin: 250px;
+    }
+
+    .product {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .container-news {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:662px) {
+    .container {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .header-image {
+
+        position: absolute;
+        width: 37%;
+        height: 50%;
+        top: 200px;
+        left: 150px;
+        z-index: 1;
+
+    }
+    .description{
+        position: absolute;
+        width:55%;
+        text-align: center;
+       margin-top:327px;
+        left: -198px;
+    }
+
+    .header h1 {
+        font-size: medium;
+    }
+    .product {
+        flex: 1 1 calc(100% - 20px);
+    }
+    .container-news{
+        align-items: center;
+        justify-content: center;
+    }
+
+  
+
+}
