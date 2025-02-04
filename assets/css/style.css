@@ -1,3 +1,7 @@
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 * {
     margin: 0;
     padding: 0;
@@ -53,13 +57,13 @@
 }
 .icons i{
     padding-left:15px;
-    color:var(--main-color);
+    color:black;
 }
 
 .button {
     text-decoration: none;
     background-color: rgb(247, 246, 246);
-    color: var(--main-color);
+    color: black;
     padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     border: 2px solid var(--secondary-color);
     border-radius: 50px;
@@ -178,20 +182,19 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeup 1s ease-in-out forwards;
-    animation-delay: 2s;
+    opacity:0;
+    
 }
 
-.container-tpro {
-    animation-delay: 3s;
+.fadeup-animation {
+    transform: translateY(100px);
+    animation: fadeup 2s ease-in-out forwards;
 }
 
 @keyframes fadeup {
     0% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(100px);
         /* موقع البداية */
     }
 
@@ -202,6 +205,7 @@
         /* موقع النهاية */
     }
 }
+
 
 .product {
     position: relative;
@@ -347,9 +351,6 @@
 }
 
 /*Best Seller*/
-.container-bestSeller {
-    animation-delay: 4s;
-}
 
 
 /*latest news*/
@@ -373,6 +374,26 @@
 .latest-news i {
     padding: 5px;
 }
+/* كلاس يتم إضافته عند التمرير */
+.pop-animation {
+    animation: popIn 2s ease-in-out forwards;
+}
+@keyframes popIn {
+    0% {
+        transform: scale(0.5); /* صغير جدًا في البداية */
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2); /* يكبر أكثر من حجمه الطبيعي */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1); /* يرجع لحجمه الطبيعي */
+        opacity: 1;
+    }
+}
+
+
 /*Start footer*/
 .footer{
     background-color: #002347;
